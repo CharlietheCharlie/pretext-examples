@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>範例 2 — Resize 時只重跑 layout()</title>
+  <style>
+    body { font-family: "Helvetica Neue", sans-serif; padding: 32px; background: #fafafa; }
+    h1 { font-size: 20px; margin-bottom: 8px; }
+    .desc { color: #666; margin-bottom: 24px; }
+    .controls { margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+    .controls input[type="range"] { width: 300px; }
+    #box {
+      border: 2px solid #3498db;
+      padding: 8px;
+      background: white;
+      overflow-wrap: break-word;
+      transition: width 0.1s;
+    }
+    #output {
+      margin-top: 16px;
+      background: #1e1e1e;
+      color: #a6e22e;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1>範例 2：Resize 時只重跑 layout()</h1>
+  <p class="desc">拖動滑桿改變寬度，觀察行數和高度即時變化。重點：prepare() 只跑一次。</p>
+
+  <div class="controls">
+    <label>容器寬度:</label>
+    <input id="slider" type="range" min="80" max="600" value="300">
+    <span id="widthLabel">300px</span>
+  </div>
+
+  <div id="box"></div>
+  <pre id="output"></pre>
+
+  <script type="module" src="./02-resize.ts"></script>
+</body>
+</html>

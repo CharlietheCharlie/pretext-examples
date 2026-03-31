@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>範例 1 — 量高度 prepare() + layout()</title>
+  <style>
+    body { font-family: "Helvetica Neue", sans-serif; padding: 32px; background: #fafafa; }
+    h1 { font-size: 20px; margin-bottom: 8px; }
+    .desc { color: #666; margin-bottom: 24px; }
+    #box {
+      border: 2px solid #e74c3c;
+      padding: 8px;
+      background: white;
+      overflow-wrap: break-word;
+    }
+    #output {
+      margin-top: 16px;
+      background: #1e1e1e;
+      color: #a6e22e;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1>範例 1：量高度 — prepare() + layout()</h1>
+  <p class="desc">最基本的用法：知道一段文字在 200px 寬度下會有幾行、多高。</p>
+
+  <div id="box"></div>
+  <pre id="output"></pre>
+
+  <script type="module" src="./01-basic-height.ts"></script>
+</body>
+</html>

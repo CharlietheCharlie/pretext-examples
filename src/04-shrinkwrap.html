@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>範例 4 — Shrinkwrap 聊天氣泡 walkLineRanges()</title>
+  <style>
+    body { font-family: "Helvetica Neue", sans-serif; padding: 32px; background: #fafafa; }
+    h1 { font-size: 20px; margin-bottom: 8px; }
+    .desc { color: #666; margin-bottom: 24px; }
+    .chat { max-width: 400px; display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+    .bubble {
+      font: 15px "Helvetica Neue", sans-serif;
+      line-height: 20px;
+      padding: 8px 12px;
+      border-radius: 16px;
+      overflow-wrap: break-word;
+    }
+    .bubble.sent {
+      background: #DCF8C6;
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+    .bubble.received {
+      background: white;
+      border: 1px solid #e0e0e0;
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+    }
+    .label {
+      font-size: 11px;
+      color: #999;
+      margin-top: 2px;
+      text-align: right;
+    }
+    #output {
+      background: #1e1e1e;
+      color: #a6e22e;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1>範例 4：Shrinkwrap 聊天氣泡 — walkLineRanges()</h1>
+  <p class="desc">
+    walkLineRanges 不建構字串，只回報每行寬度，適合快速找出最窄容器寬度（shrinkwrap）。
+    對比下方 CSS 預設寬度 vs Pretext shrinkwrap 寬度。
+  </p>
+
+   <div class="controls">
+    <label>容器寬度:</label>
+    <input id="slider" type="range" min="80" max="600" value="300">
+    <span id="widthLabel">300px</span>
+  </div>
+
+  <div class="chat" id="chat"></div>
+  <pre id="output"></pre>
+
+  <script type="module" src="./04-shrinkwrap.ts"></script>
+</body>
+</html>

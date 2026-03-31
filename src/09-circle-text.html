@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>範例 9 — 圓形文字排版</title>
+  <style>
+    body { font-family: "Helvetica Neue", sans-serif; padding: 32px; background: #fafafa; }
+    h1 { font-size: 20px; margin-bottom: 8px; }
+    .desc { color: #666; margin-bottom: 24px; }
+    canvas { border: 1px solid #ccc; border-radius: 8px; background: white; }
+    .controls { margin-bottom: 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .controls label { font-size: 14px; }
+    .controls input[type="range"] { width: 200px; }
+    #output {
+      margin-top: 16px;
+      background: #1e1e1e;
+      color: #a6e22e;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1>範例 9：圓形文字排版</h1>
+  <p class="desc">
+    用 layoutNextLine() 讓每行根據圓的弦寬（chord width）取得不同的 maxWidth，文字就會排成圓形。
+    拖動滑桿調整半徑。
+  </p>
+
+  <div class="controls">
+    <label>半徑:</label>
+    <input id="slider" type="range" min="80" max="300" value="180">
+    <span id="radiusLabel">180px</span>
+  </div>
+
+  <canvas id="canvas"></canvas>
+  <pre id="output"></pre>
+
+  <script type="module" src="./09-circle-text.ts"></script>
+</body>
+</html>

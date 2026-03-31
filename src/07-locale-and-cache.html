@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>範例 7 — setLocale() + clearCache()</title>
+  <style>
+    body { font-family: "Helvetica Neue", sans-serif; padding: 32px; background: #fafafa; }
+    h1 { font-size: 20px; margin-bottom: 8px; }
+    .desc { color: #666; margin-bottom: 24px; }
+    .buttons { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+    button {
+      padding: 8px 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover { background: #f0f0f0; }
+    button.active { background: #3498db; color: white; border-color: #3498db; }
+    .result-box {
+      border: 2px solid #2ecc71;
+      border-radius: 8px;
+      padding: 16px;
+      background: white;
+      max-width: 400px;
+      font: 16px sans-serif;
+      line-height: 24px;
+      overflow-wrap: break-word;
+      margin-bottom: 16px;
+    }
+    #output {
+      background: #1e1e1e;
+      color: #a6e22e;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>範例 7：setLocale() 切換分詞語言 + clearCache()</h1>
+  <p class="desc">
+    不同 locale 影響 Intl.Segmenter 的分詞行為。點擊按鈕觀察日文在不同 locale 下斷行位置的差異。
+  </p>
+
+  <div class="buttons">
+    <button data-locale="" class="active">預設 locale</button>
+    <button data-locale="ja">日文 (ja)</button>
+    <button data-locale="zh">中文 (zh)</button>
+    <button data-locale="en">英文 (en)</button>
+    <button id="btn-clear">清除快取 (clearCache)</button>
+  </div>
+
+  <div class="result-box" id="box"></div>
+  <pre id="output"></pre>
+
+  <script type="module" src="./07-locale-and-cache.ts"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pretext 範例教學</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", sans-serif;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 48px 24px;
+      background: #fafafa;
+      color: #333;
+    }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    .subtitle { color: #666; margin-bottom: 32px; }
+    .card {
+      display: block;
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.15s, border-color 0.15s;
+    }
+    .card:hover {
+      border-color: #3498db;
+      box-shadow: 0 2px 12px rgba(52, 152, 219, 0.15);
+    }
+    .card-title { font-weight: 600; font-size: 16px; margin-bottom: 4px; }
+    .card-api { font-size: 13px; color: #3498db; font-family: monospace; margin-bottom: 4px; }
+    .card-desc { font-size: 14px; color: #888; }
+  </style>
+</head>
+<body>
+  <h1>Pretext 範例教學</h1>
+  <p class="subtitle">10 個由淺入深的互動範例，每個都可以獨立執行</p>
+
+  <a class="card" href="./01-basic-height.html">
+    <div class="card-title">1. 量高度</div>
+    <div class="card-api">prepare() + layout()</div>
+    <div class="card-desc">最基本的用法：算出一段文字在某個寬度下的行數和高度</div>
+  </a>
+
+  <a class="card" href="./02-resize.html">
+    <div class="card-title">2. Resize 響應</div>
+    <div class="card-api">prepare() 一次 + layout() 多次</div>
+    <div class="card-desc">拖動滑桿改變寬度，觀察 layout() 即時重算（不需要重新 prepare）</div>
+  </a>
+
+  <a class="card" href="./03-layout-with-lines.html">
+    <div class="card-title">3. 取得每行文字</div>
+    <div class="card-api">prepareWithSegments() + layoutWithLines()</div>
+    <div class="card-desc">拿到每一行的文字和寬度，畫到 Canvas 上</div>
+  </a>
+
+  <a class="card" href="./04-shrinkwrap.html">
+    <div class="card-title">4. Shrinkwrap 聊天氣泡</div>
+    <div class="card-api">walkLineRanges()</div>
+    <div class="card-desc">找出不增加行數的最窄容器寬度，讓氣泡剛好包住文字</div>
+  </a>
+
+  <a class="card" href="./05-text-wrap-around-image.html">
+    <div class="card-title">5. 文繞圖</div>
+    <div class="card-api">layoutNextLine()</div>
+    <div class="card-desc">逐行排版，每行可以指定不同寬度，實現文字繞過圖片</div>
+  </a>
+
+  <a class="card" href="./06-pre-wrap.html">
+    <div class="card-title">6. Pre-wrap 模式</div>
+    <div class="card-api">prepare(text, font, { whiteSpace: 'pre-wrap' })</div>
+    <div class="card-desc">保留空白、Tab、換行，適合 textarea 和程式碼編輯器</div>
+  </a>
+
+  <a class="card" href="./07-locale-and-cache.html">
+    <div class="card-title">7. 切換語言與快取</div>
+    <div class="card-api">setLocale() + clearCache()</div>
+    <div class="card-desc">切換分詞 locale 觀察斷行差異，手動清除快取釋放記憶體</div>
+  </a>
+
+  <a class="card" href="./08-font-format.html">
+    <div class="card-title">8. Font 格式與注意事項</div>
+    <div class="card-api">prepare(text, font)</div>
+    <div class="card-desc">正確的 font 格式範例、不要用 system-ui、lineHeight 要同步</div>
+  </a>
+
+  <a class="card" href="./09-circle-text.html">
+    <div class="card-title">9. 圓形文字排版</div>
+    <div class="card-api">layoutNextLine() + 圓弦寬公式</div>
+    <div class="card-desc">每行用圓的弦寬當 maxWidth，文字自動排成圓形，可拖動滑桿調整半徑</div>
+  </a>
+
+  <a class="card" href="./10-text-shape.html">
+    <div class="card-title">10. 文字填滿自訂圖案</div>
+    <div class="card-api">layoutNextLine() + 像素掃描</div>
+    <div class="card-desc">把大字畫到隱藏 Canvas 掃描像素，用小字填滿圖案輪廓（預設 SOS，可自訂）</div>
+  </a>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>範例 8 — Font 格式與注意事項</title>
+  <style>
+    body { font-family: "Helvetica Neue", sans-serif; padding: 32px; background: #fafafa; }
+    h1 { font-size: 20px; margin-bottom: 8px; }
+    .desc { color: #666; margin-bottom: 24px; }
+    table { border-collapse: collapse; margin-bottom: 24px; }
+    th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; font-size: 14px; }
+    th { background: #f5f5f5; }
+    .ok { color: #27ae60; }
+    .bad { color: #e74c3c; }
+    .demo-row { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 12px; }
+    .demo-box {
+      border: 1px solid #ccc;
+      padding: 8px;
+      background: white;
+      border-radius: 6px;
+      width: 200px;
+      overflow-wrap: break-word;
+    }
+    .demo-label { font-size: 12px; color: #999; margin-bottom: 4px; }
+    #output {
+      background: #1e1e1e;
+      color: #a6e22e;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1>範例 8：Font 格式與注意事項</h1>
+  <p class="desc">
+    prepare() 的 font 參數格式跟 Canvas ctx.font 一樣（CSS font shorthand）。
+    以下展示各種正確和錯誤的格式，並用不同字型比較排版結果。
+  </p>
+
+  <!-- 格式參考表 -->
+  <table>
+    <tr>
+      <th>格式</th>
+      <th>範例</th>
+      <th>說明</th>
+    </tr>
+    <tr>
+      <td class="ok">size family</td>
+      <td><code>16px Inter</code></td>
+      <td>最基本的格式</td>
+    </tr>
+    <tr>
+      <td class="ok">weight size family</td>
+      <td><code>bold 16px Inter</code></td>
+      <td>加粗體</td>
+    </tr>
+    <tr>
+      <td class="ok">style size family</td>
+      <td><code>italic 16px Georgia</code></td>
+      <td>斜體</td>
+    </tr>
+    <tr>
+      <td class="ok">style weight size family</td>
+      <td><code>italic bold 20px Arial</code></td>
+      <td>斜粗體</td>
+    </tr>
+    <tr>
+      <td class="ok">size "family name"</td>
+      <td><code>16px "Helvetica Neue"</code></td>
+      <td>家族名有空格要加引號</td>
+    </tr>
+    <tr>
+      <td class="ok">size family, fallback</td>
+      <td><code>14px "Courier New", monospace</code></td>
+      <td>多個 fallback</td>
+    </tr>
+    <tr>
+      <td class="bad">family size</td>
+      <td><code>Inter 16px</code></td>
+      <td>順序錯了</td>
+    </tr>
+    <tr>
+      <td class="bad">size system-ui</td>
+      <td><code>16px system-ui</code></td>
+      <td>macOS 上 Canvas/DOM 可能解析到不同字型</td>
+    </tr>
+  </table>
+
+  <div id="demos"></div>
+  <pre id="output"></pre>
+
+  <script type="module" src="./08-font-format.ts"></script>
+</body>
+</html>

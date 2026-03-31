@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>範例 10 — 文字填滿自訂圖案</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Orbitron:wght@700&family=Silkscreen&family=Press+Start+2P&family=Russo+One&family=Bungee+Shade&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: "Helvetica Neue", sans-serif; padding: 32px; background: #1a1a2e; color: #eee; }
+    h1 { font-size: 20px; margin-bottom: 8px; }
+    .desc { color: #999; margin-bottom: 24px; }
+    .controls { margin-bottom: 12px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .controls label { font-size: 14px; color: #aaa; }
+    .controls input[type="text"] {
+      font-size: 14px; padding: 6px 12px; border-radius: 6px;
+      border: 1px solid #444; background: #2a2a3e; color: #eee; width: 120px;
+    }
+    .controls select {
+      font-size: 14px; padding: 6px 12px; border-radius: 6px;
+      border: 1px solid #444; background: #2a2a3e; color: #eee;
+    }
+    .controls input[type="range"] { width: 150px; }
+    .controls span { font-size: 13px; color: #888; min-width: 40px; }
+    canvas { border-radius: 8px; display: block; margin-bottom: 16px; }
+    #output {
+      background: #0d0d1a;
+      color: #a6e22e;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>範例 10：文字填滿自訂圖案（SOS）</h1>
+  <p class="desc">
+    先把大字畫到隱藏 Canvas 讀像素，掃描每行的墨水區域，再用 layoutNextLine() 逐區填入小字。
+  </p>
+
+  <div class="controls">
+    <label>圖案文字:</label>
+    <input id="shapeText" type="text" value="SOS">
+    <label>圖案字型:</label>
+    <select id="shapeFont">
+      <option value="Black Ops One" selected>Black Ops One (軍事風)</option>
+      <option value="Orbitron">Orbitron (科幻風)</option>
+      <option value="Bungee Shade">Bungee Shade (立體陰影)</option>
+      <option value="Russo One">Russo One (工業風)</option>
+      <option value="Impact">Impact (經典粗體)</option>
+    </select>
+  </div>
+  <div class="controls">
+    <label>填充字型:</label>
+    <select id="fillFont">
+      <option value="Silkscreen">Silkscreen (像素風)</option>
+      <option value="Press Start 2P">Press Start 2P (遊戲風)</option>
+      <option value="Courier New" selected>Courier New (等寬)</option>
+      <option value="Orbitron">Orbitron (科幻風)</option>
+      <option value="Helvetica Neue">Helvetica Neue (乾淨)</option>
+    </select>
+    <label>圖案大小:</label>
+    <input id="sizeSlider" type="range" min="80" max="300" value="160">
+    <span id="sizeLabel">160px</span>
+    <label>填充字大小:</label>
+    <input id="fillSizeSlider" type="range" min="6" max="16" value="9">
+    <span id="fillSizeLabel">9px</span>
+  </div>
+
+  <canvas id="canvas"></canvas>
+  <pre id="output"></pre>
+
+  <script type="module" src="./10-text-shape.ts"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>範例 6 — pre-wrap 模式</title>
+  <style>
+    body { font-family: "Helvetica Neue", sans-serif; padding: 32px; background: #fafafa; }
+    h1 { font-size: 20px; margin-bottom: 8px; }
+    .desc { color: #666; margin-bottom: 24px; }
+    .container { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; }
+    textarea {
+      font: 14px "Courier New", monospace;
+      line-height: 20px;
+      width: 320px;
+      min-height: 140px;
+      padding: 8px;
+      white-space: pre-wrap;
+      tab-size: 8;
+      border: 2px solid #9b59b6;
+      border-radius: 8px;
+    }
+    #output {
+      background: #1e1e1e;
+      color: #a6e22e;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      min-width: 280px;
+    }
+  </style>
+</head>
+<body>
+  <h1>範例 6：pre-wrap 模式（保留空白和換行）</h1>
+  <p class="desc">
+    傳入 { whiteSpace: 'pre-wrap' } 後，空白、Tab、換行都會保留。適合 textarea / 程式碼編輯器。
+    試著在下方 textarea 打字或換行。
+  </p>
+
+  <div class="container">
+    <textarea id="input">第一行文字
+&#9;這行前面有 Tab
+    這行有四個空白
+
+上面是空行
+最後一行 🎉</textarea>
+    <pre id="output"></pre>
+  </div>
+
+  <script type="module" src="./06-pre-wrap.ts"></script>
+</body>
+</html>

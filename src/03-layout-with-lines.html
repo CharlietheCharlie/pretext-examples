@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>範例 3 — 取得每行文字 layoutWithLines()</title>
+  <style>
+    body { font-family: "Helvetica Neue", sans-serif; padding: 32px; background: #fafafa; }
+    h1 { font-size: 20px; margin-bottom: 8px; }
+    .desc { color: #666; margin-bottom: 24px; }
+    .container { display: flex; gap: 32px; flex-wrap: wrap; }
+    canvas { border: 1px solid #ccc; border-radius: 8px; background: white; }
+    #output {
+      background: #1e1e1e;
+      color: #a6e22e;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      min-width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <h1>範例 3：取得每行文字 — layoutWithLines()</h1>
+  <p class="desc">
+    用 prepareWithSegments + layoutWithLines 拿到每一行的文字和寬度，再畫到 Canvas 上。
+  </p>
+
+  <div class="container">
+    <canvas id="canvas"></canvas>
+    <pre id="output"></pre>
+  </div>
+
+  <script type="module" src="./03-layout-with-lines.ts"></script>
+</body>
+</html>
