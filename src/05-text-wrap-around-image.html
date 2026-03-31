@@ -9,6 +9,7 @@
     h1 { font-size: 20px; margin-bottom: 8px; }
     .desc { color: #666; margin-bottom: 24px; }
     canvas { border: 1px solid #ccc; border-radius: 8px; background: white; }
+    .controls { margin-bottom: 16px; width:500px; }
     #output {
       margin-top: 16px;
       background: #1e1e1e;
@@ -17,14 +18,25 @@
       border-radius: 8px;
       font-size: 14px;
     }
+    #inputText {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
   </style>
 </head>
 <body>
   <h1>範例 5：文繞圖 — layoutNextLine()</h1>
   <p class="desc">
     layoutNextLine() 是逐行排版的迭代器，每行可以指定不同寬度。
-    這裡示範文字繞過右上角的「圖片」。
+    試試拖曳畫面中的圖片，文字會即時重新排版包覆！
   </p>
+  <div class="controls">
+  <textarea id="inputText" placeholder="輸入文字..." rows="4"></textarea>
+  </div>
 
   <canvas id="canvas" width="520" height="400"></canvas>
   <pre id="output"></pre>
